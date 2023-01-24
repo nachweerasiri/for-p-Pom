@@ -1,5 +1,3 @@
-const db = require(".");
-
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(
         "User",
@@ -15,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validate: {
-                    isEmail: true,
+                    notEmpty: true,
                 },
             },
             email: {
